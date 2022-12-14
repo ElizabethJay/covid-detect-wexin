@@ -1,159 +1,292 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/predictionresult/predictionresult"],{
+import * as echarts from '../../ec-canvas/echarts';
+import * as liquidFill from '../../ec-canvas/echarts-liquidfill.min';
 
-/***/ 91:
-/*!********************************************************************************************!*\
-  !*** F:/新冠监测/covid-control/main.js?{"page":"pages%2Fpredictionresult%2Fpredictionresult"} ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 3);
-__webpack_require__(/*! uni-pages */ 25);
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 24));
-var _predictionresult = _interopRequireDefault(__webpack_require__(/*! ./pages/predictionresult/predictionresult.vue */ 92));
-// @ts-ignore
-wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;
-createPage(_predictionresult.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 92:
-/*!*************************************************************************!*\
-  !*** F:/新冠监测/covid-control/pages/predictionresult/predictionresult.vue ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _predictionresult_vue_vue_type_template_id_548bc1f4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./predictionresult.vue?vue&type=template&id=548bc1f4& */ 93);
-/* harmony import */ var _predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./predictionresult.vue?vue&type=script&lang=js& */ 95);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 31);
-
-var renderjs
+// getrisk 请求服务器得到感染风险
+let getrisk = 0.2;
+// getzz 请求服务器得到用于填写的症状数据
+let getzz = [100, 30, 30, 100, 30, 30, 100, 100];
 
 
 
 
-/* normalize component */
-
-var component = Object(_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _predictionresult_vue_vue_type_template_id_548bc1f4___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _predictionresult_vue_vue_type_template_id_548bc1f4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null,
-  false,
-  _predictionresult_vue_vue_type_template_id_548bc1f4___WEBPACK_IMPORTED_MODULE_0__["components"],
-  renderjs
-)
-
-component.options.__file = "pages/predictionresult/predictionresult.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ 93:
-/*!********************************************************************************************************!*\
-  !*** F:/新冠监测/covid-control/pages/predictionresult/predictionresult.vue?vue&type=template&id=548bc1f4& ***!
-  \********************************************************************************************************/
-/*! exports provided: render, staticRenderFns, recyclableRender, components */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_template_id_548bc1f4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./predictionresult.vue?vue&type=template&id=548bc1f4& */ 94);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_template_id_548bc1f4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_template_id_548bc1f4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_template_id_548bc1f4___WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_16_0_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_template_id_548bc1f4___WEBPACK_IMPORTED_MODULE_0__["components"]; });
 
 
+let zz = [100, 25, 100, 25, 25, 100, 100, 25];
+let risk = 0.1;
+const zzrisk = [8.7, 13.6, 13.9, 18.6, 38.1, 50, 67.7, 87.9];
+let exist = [];
+let notexist = [];
+let datashow = [];
 
-/***/ }),
-
-/***/ 94:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/新冠监测/covid-control/pages/predictionresult/predictionresult.vue?vue&type=template&id=548bc1f4& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns, recyclableRender, components */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
+// 柱状图参数初始化
+for (var i = 0; i < 8; i++) {
+  if (zz[i] == 100) {
+    datashow.push({
+      value: zzrisk[i],
+      itemStyle: {
+        color: '#FDB72F'
+      }
+    })
+    exist.push(datashow[i]);
+  } else {
+    datashow.push({
+      value: zzrisk[i],
+      itemStyle: {
+        color: '#4DBE61'
+      }
+    });
+    notexist.push(datashow[i]);
+  }
 }
-var recyclableRender = false
-var staticRenderFns = []
-render._withStripped = true
 
+// 水球颜色根据risk变化
+function setcolor(value) {
+  if(value < 0.25){
+    return '#00FF00';
+  }
+  else if (value < 0.5){
+    return '#4DBE61';
+  }
+  else if (value < 0.75){
+    return '#FDB72F';
+  }
+  else{
+    return '#FF0000';
+  }
+}
 
-
-/***/ }),
-
-/***/ 95:
-/*!**************************************************************************************************!*\
-  !*** F:/新冠监测/covid-control/pages/predictionresult/predictionresult.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./predictionresult.vue?vue&type=script&lang=js& */ 96);
-/* harmony import */ var _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_D_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_D_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_predictionresult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ 96:
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!F:/新冠监测/covid-control/pages/predictionresult/predictionresult.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-//
-//
-//
-//
-//
-//
-var _default = {
-  data: function data() {
-    return {};
+Page({
+  data: {
+    ec_dispace_charts: {
+      lazyLoad: true
+    },
+    ec_radar_chart:{
+      onInit: init_radar_Chart
+    },
+    ec_bar_chart:{
+      onInit: init_bar_Chart
+    }
   },
-  methods: {}
-};
-exports.default = _default;
+  onLoad: function () {
+    // 获取组件
+    this.ecComponent = this.selectComponent('#dispace_charts');
+    this.initCharts(risk);
+  },
+  initCharts: function (value) {
+    this.ecComponent.init((canvas, width, height, dpr) => {
+      // 获取组件的 canvas、width、height 后的回调函数
+      // 在这里初始化图表
+      const chart = echarts.init(canvas, null, {
+        width: width,
+        height: height,
+        devicePixelRatio: dpr // new
+      });
+      // let data = [value, value, value, ];
+      chart.setOption(setOption(value));
+      // 将图表实例绑定到 this 上，可以在其他成员函数（如 dispose）中访问
+      this.chart = chart;
+      // 注意这里一定要返回 chart 实例，否则会影响事件处理等
+      return chart;
+    });
+  }
+})
 
-/***/ })
 
-},[[91,"common/runtime","common/vendor"]]]);
-//# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/predictionresult/predictionresult.js.map
+
+function setOption(value, data) {
+  const option = {
+    title: {
+      text: '健康风险',
+    },
+    grid:{
+      left: 0,
+      top: 0,
+      bottom: 0
+  },
+  series: [{
+      type: 'liquidFill',
+      waveAnimation: true,
+      animation: true,
+      // color: '#ff8',
+      radius: '95%',
+      center: ['50%', '50%'],
+      data: [
+        {
+          value: value,
+          direction: "left",
+          itemStyle: {
+            normal: {
+            //这里就是根据不同的值显示不同球体的颜色
+              color: setcolor(value),
+            },
+          },
+        },
+      ],
+      label: {
+        formatter: value,    //  值
+        fontSize: 20,
+        fontFamily: 'Lobster Two',
+      },
+      backgorundStyle:{
+        color:setcolor(value)
+      },
+      outline: {
+        borderDistance: 0,
+        itemStyle: {
+          borderWidth: 5,
+          borderColor: {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+              offset: 0,
+              color: 'rgba(69, 73, 240, 0)'
+            }, {
+              offset: 0.5,
+              color: 'rgba(69, 73, 240, .25)'
+            }, {
+              offset: 1,
+              color: 'rgba(69, 73, 240, 1)'
+            }],
+            globalCoord: false
+          },
+          shadowBlur: 10,
+          shadowColor: '#ffffff',
+        }
+      },
+  }]
+  };
+  return option
+}
+
+function init_radar_Chart (canvas, width, height, dpr) {
+  let chart = echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr
+  })
+  canvas.setChart(chart)
+  const option = {
+    color: ['#67F9D8', '#FFE434', '#56A3F1', '#FF917C'],
+    title: {
+      text: '我的症状'
+    },
+    legend: {},
+    radar: [
+      {
+        indicator: [
+          { text: '发烧', max: 100},
+          { text: '气喘', max: 100},
+          { text: '身体乏力', max: 100 },
+          { text: '咽干咽痛', max: 100 },
+          { text: '咽痒咳嗽', max: 100 },
+          { text: '肠胃不适', max: 100},
+          { text: '流涕鼻塞', max: 100},
+          { text: '头痛', max: 100},
+        ],
+        center: ['50%', '50%'],
+        radius: 70,
+        startAngle: 90,
+        splitNumber: 4,
+        shape: 'circle',
+        axisName: {
+          formatter: '【{value}】',
+          color: '#428BD4'
+        },
+        splitArea: {
+          areaStyle: {
+            // ['#FFFFFF', '#26C3BE', '#64AFE9', '#428BD4'],
+            color: ['#FFFFFF', '#4DBE61', '#FDB72F', '#FF0000'],
+            shadowColor: 'rgba(0, 0, 0, 0.2)',
+            shadowBlur: 10
+          }
+        },
+        axisLine: {
+          lineStyle: {
+            color: 'rgba(211, 253, 250, 0.8)'
+          }
+        },
+        splitLine: {
+          lineStyle: {
+            color: 'rgba(211, 253, 250, 0.8)'
+          }
+        }
+      }
+    ],
+    series: [
+      {
+        type: 'radar',
+        emphasis: {
+          lineStyle: {
+            width: 4
+          }
+        },
+        data: [
+          {
+            value: zz,
+            areaStyle: {
+              color: 'rgba(255, 228, 52, 0.6)'
+            }
+          }
+        ]
+      }
+    ]
+  };
+  chart.setOption(option);
+  return chart;
+}
+
+
+function init_bar_Chart (canvas, width, height, dpr) {
+  let chart = echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr
+  })
+  const option = {
+    title: {
+      text: '感染者症状频率'
+    },
+    grid:{
+      left: '20%',
+      right: '15%'
+    },
+    xAxis: {
+      name:'频率',
+      type: 'value'
+    },
+    yAxis: {
+      name: '症状',
+      type: 'category',
+      data: [
+        '肠胃不适',
+        '头痛',
+        '咽干咽痛',
+        '气喘',
+        '身体乏力',
+        '流涕鼻塞',
+        '咽痒咳嗽',
+        '发烧'
+      ]
+    },
+    series: [
+      {
+        data: datashow,
+        type: 'bar',
+        label: {
+          show: true,
+          precision: 1,
+          position: 'right',
+          formatter: '{c}%'
+        }
+      },
+      
+    ]
+  };
+  chart.setOption(option);
+  return chart;
+}

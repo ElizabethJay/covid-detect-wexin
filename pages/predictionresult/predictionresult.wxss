@@ -1,0 +1,23 @@
+/**index.wxss**/
+.table_container{
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container1{
+  width: 100%;
+  height: 60%;
+}
+.container2{
+  width: 100%;
+  height: 130%;
+}
+.container3{
+  width: 100%;
+  height: 150%;
+}
+
+
+

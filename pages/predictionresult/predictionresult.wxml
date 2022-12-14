@@ -1,1 +1,17 @@
-<view></view>
+<!--index.wxml-->
+<view class='table_container'>
+  <view class="container1">
+    <ec-canvas id="dispace_charts" canvas-id="dispace_charts" ec="{{ ec_dispace_charts }}"></ec-canvas>
+  </view>
+  <view class="container2">
+    <ec-canvas id="radar_charts" canvas-id="radar_charts" ec="{{ ec_radar_chart }}"></ec-canvas>
+  </view>
+  <view class="container3">
+    <ec-canvas id="bar_charts" canvas-id="bar_charts" ec="{{ ec_bar_chart }}"></ec-canvas>
+  </view>
+</view>
+<view>*柱状图中绿色代表用户当前尚无的症状，橙色是用户已有症状</view>
+
+
+
+
